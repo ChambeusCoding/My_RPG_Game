@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://xwoxe5ow6gr6"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_h37bq"]
+[ext_resource type="Texture2D" uid="uid://cgd35uutwdx5k" path="res://Action RPG Resources/World/Untitled design (2)nnhngng.png" id="2_v5w02"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_b8mks"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 29.0
+offset_right = 14.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h37bq")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stream = SubResource("VideoStreamTheora_b8mks")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Enter the Nexus" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Enter the Nexus"
+
+[node name="TBBA" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Tavern Brawl Battle Arena Mini Game"
+
+[node name="Submit to Divine Will" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Submit to Divine Will"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(148.874, 61.5488)
+scale = Vector2(0.342206, 0.218218)
+texture = ExtResource("2_v5w02")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Enter the Nexus" to="." method="_on_enter_the_nexus_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TBBA" to="." method="_on_lay_in_the_in_between_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Submit to Divine Will" to="." method="_on_submit_to_divine_will_pressed"]

@@ -1,0 +1,83 @@
+[gd_scene load_steps=13 format=3 uid="uid://dey1ev0dhqt2l"]
+
+[ext_resource type="Script" path="res://Action RPG Resources/Enemies/bat_phantom.gd" id="1_10f5j"]
+[ext_resource type="Texture2D" uid="uid://caxr5c8c7x6d6" path="res://Action RPG Resources/Enemies/Batma.png" id="1_p6144"]
+[ext_resource type="Texture2D" uid="uid://cevv88x28hysd" path="res://Action RPG Resources/Shadows/SmallShadow.png" id="2_l3nrg"]
+[ext_resource type="PackedScene" uid="uid://c6i7pwk4duli5" path="res://Hit/hurtbox.tscn" id="3_fp0sa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08kph"]
+atlas = ExtResource("1_p6144")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3u4j"]
+atlas = ExtResource("1_p6144")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udl81"]
+atlas = ExtResource("1_p6144")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13r62"]
+atlas = ExtResource("1_p6144")
+region = Rect2(48, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpqpt"]
+atlas = ExtResource("1_p6144")
+region = Rect2(64, 0, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ltf3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08kph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3u4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udl81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13r62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpqpt")
+}],
+"loop": true,
+"name": &"Fly",
+"speed": 13.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wu0cw"]
+radius = 8.0
+height = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y1gow"]
+radius = 4.0
+
+[node name="BatPhantom" type="CharacterBody2D"]
+platform_floor_layers = 4294967264
+script = ExtResource("1_10f5j")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6ltf3")
+animation = &"Fly"
+autoplay = "Fly"
+frame_progress = 0.941882
+offset = Vector2(0, -12)
+
+[node name="Hurtbox" parent="Sprite2D" instance=ExtResource("3_fp0sa")]
+
+[node name="CollisionShape2D" parent="Sprite2D/Hurtbox" index="0"]
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_wu0cw")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("2_l3nrg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_y1gow")
+
+[connection signal="area_entered" from="Sprite2D/Hurtbox" to="." method="_on_hurtbox_area_entered"]
+
+[editable path="Sprite2D/Hurtbox"]

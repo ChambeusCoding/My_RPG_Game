@@ -1,0 +1,196 @@
+[gd_scene load_steps=12 format=3 uid="uid://b4fxq1qvjj5nf"]
+
+[ext_resource type="PackedScene" uid="uid://bl26e0pkp15mr" path="res://Action RPG Resources/Player/player.tscn" id="2_gpfge"]
+[ext_resource type="PackedScene" uid="uid://cuy6ux0moy43f" path="res://Action RPG Resources/World/BUSH.tscn" id="2_n0ox0"]
+[ext_resource type="Texture2D" uid="uid://cl3or1swqj8o3" path="res://Untitled.png" id="3_m5esc"]
+[ext_resource type="PackedScene" uid="uid://d186j4kbjrsdc" path="res://Action RPG Resources/World/TREE.tscn" id="4_5qjji"]
+[ext_resource type="PackedScene" uid="uid://cshhjimxe4p1u" path="res://Action RPG Resources/World/grass.tscn" id="5_jxlrg"]
+[ext_resource type="Texture2D" uid="uid://c1yctm1wivmfi" path="res://Action RPG Resources/World/CliffTileset.png" id="6_6hdf7"]
+[ext_resource type="PackedScene" uid="uid://dey1ev0dhqt2l" path="res://Action RPG Resources/Enemies/bat_phantom.tscn" id="6_xfocq"]
+[ext_resource type="Texture2D" uid="uid://cjcoo3r4becs3" path="res://Action RPG Resources/World/DirtTileset.png" id="7_hup1g"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u4bje"]
+texture = ExtResource("6_6hdf7")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gkqcb"]
+texture = ExtResource("7_hup1g")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vus3e"]
+sources/0 = SubResource("TileSetAtlasSource_u4bje")
+sources/1 = SubResource("TileSetAtlasSource_gkqcb")
+
+[node name="MiniGame" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_gpfge")]
+position = Vector2(139, 65)
+
+[node name="BUSH" parent="." instance=ExtResource("2_n0ox0")]
+position = Vector2(-72, 72)
+
+[node name="Grass" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(32, 32.25)
+scale = Vector2(1, 1.00794)
+texture = ExtResource("3_m5esc")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 63)
+
+[node name="Grass2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(32, 96)
+scale = Vector2(1, 1.01587)
+texture = ExtResource("3_m5esc")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 63)
+
+[node name="Grass3" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(32, 154)
+scale = Vector2(1, 0.825394)
+texture = ExtResource("3_m5esc")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 63)
+
+[node name="Grass4" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(95, 154)
+scale = Vector2(1.03125, 0.839283)
+texture = ExtResource("3_m5esc")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 63)
+
+[node name="Grass5" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(160, 154)
+scale = Vector2(1, 0.825397)
+texture = ExtResource("3_m5esc")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 63)
+
+[node name="Grass6" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(224, 154)
+scale = Vector2(1, 0.825396)
+texture = ExtResource("3_m5esc")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 63)
+
+[node name="Grass7" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(288, 154.25)
+scale = Vector2(1, 0.865079)
+texture = ExtResource("3_m5esc")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 63)
+
+[node name="Grass8" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(288, 95.5)
+scale = Vector2(1, 1.03175)
+texture = ExtResource("3_m5esc")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 63)
+
+[node name="Grass9" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(224, 95)
+scale = Vector2(1, 1.04762)
+texture = ExtResource("3_m5esc")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 63)
+
+[node name="Grass10" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(160, 95)
+scale = Vector2(1, 1.04762)
+texture = ExtResource("3_m5esc")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 63)
+
+[node name="Grass11" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(96, 94.9688)
+scale = Vector2(1, 1.04663)
+texture = ExtResource("3_m5esc")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 63)
+
+[node name="Grass12" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(96, 32)
+scale = Vector2(1, 1.01389)
+texture = ExtResource("3_m5esc")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 63)
+
+[node name="Grass13" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(160, 32)
+scale = Vector2(1, 1.01389)
+texture = ExtResource("3_m5esc")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 63)
+
+[node name="Grass14" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(224, 32)
+scale = Vector2(1, 1.01389)
+texture = ExtResource("3_m5esc")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 63)
+
+[node name="Grass15" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(288, 32)
+scale = Vector2(1, 1.01389)
+texture = ExtResource("3_m5esc")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 63)
+
+[node name="TREE" parent="." instance=ExtResource("4_5qjji")]
+position = Vector2(-80, 128)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 0, 320, 0, 320, 8, 8, 8, 10, 180, 304, 180, 304, 8, 320, 8, 320, 189, 264.004, 188.825, 0, 188)
+
+[node name="grass3" parent="." instance=ExtResource("5_jxlrg")]
+position = Vector2(30, 94)
+
+[node name="grass4" parent="." instance=ExtResource("5_jxlrg")]
+position = Vector2(34, 28)
+
+[node name="grass5" parent="." instance=ExtResource("5_jxlrg")]
+position = Vector2(159, 26)
+
+[node name="grass6" parent="." instance=ExtResource("5_jxlrg")]
+position = Vector2(31, 161)
+
+[node name="grass8" parent="." instance=ExtResource("5_jxlrg")]
+position = Vector2(158, 162)
+
+[node name="grass13" parent="." instance=ExtResource("5_jxlrg")]
+position = Vector2(282, 162)
+
+[node name="grass15" parent="." instance=ExtResource("5_jxlrg")]
+position = Vector2(280, 26)
+
+[node name="grass16" parent="." instance=ExtResource("5_jxlrg")]
+position = Vector2(280, 88)
+
+[node name="BatPhantom" parent="." instance=ExtResource("6_xfocq")]
+position = Vector2(48, 73)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_vus3e")
+format = 2
