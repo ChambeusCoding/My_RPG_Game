@@ -969,13 +969,13 @@ blend_mode = 1
 animation = &"RollLeft"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8uqm1"]
-animation = &"RollFoward"
+animation = &"RollBack"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_krvy5"]
 animation = &"RollRight"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ekqir"]
-animation = &"RollBack"
+animation = &"RollFoward"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_41npd"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_caxn6")
@@ -1137,7 +1137,7 @@ parameters/conditions/is_moving = false
 parameters/conditions/roll = false
 parameters/conditions/swing = false
 parameters/Idle/blend_position = Vector2(0, 0)
-parameters/Roll/blend_position = Vector2(0, 0)
+parameters/Roll/blend_position = Vector2(0, 0.0320001)
 parameters/Swing/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
 
