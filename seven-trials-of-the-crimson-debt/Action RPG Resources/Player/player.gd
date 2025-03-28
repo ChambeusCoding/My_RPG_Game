@@ -107,26 +107,7 @@ func update_animation_parameters():
 			animation_tree.set("parameters/conditions/roll", false)
 			animation_tree.set("parameters/conditions/is_moving", true)
 
-## This function will be triggered when the body enters any of the collision areas (children of the Hitbox node)
-#func _on_hitbox_entered(body: Node) -> void:
-	## Check if the body that entered the hitbox is the player (or any other entity you want to apply knockback to)
-	#if body.is_in_group("bat_phantom"):
-		## Determine the knockback vector based on which hitbox was entered
-		#var knockback_force = 120  # Adjust as needed
-		#var knockback_vector : Vector2
-#
-		## Apply different knockback based on which collision area was triggered
-		#if body == right_hitbox:
-			#knockback_vector = Vector2(1, 0) * knockback_force  # Knockback to the right
-		#elif body == left_hitbox:
-			#knockback_vector = Vector2(-1, 0) * knockback_force  # Knockback to the left
-		#elif body == forward_hitbox:
-			#knockback_vector = Vector2(0, -1) * knockback_force  # Knockback forward (up)
-		#elif body == back_hitbox:
-			#knockback_vector = Vector2(0, 1) * knockback_force  # Knockback backward (down)
-#
-		## Apply the knockback impulse
-		#body.apply_impulse(Vector2.ZERO, knockback_vector)  # Apply the knockback to the player
+
 		
 		# This function will be triggered when the body enters any of the collision areas (children of the Hurtbox node)
 func _on_hitbox_entered(body: Node) -> void:
