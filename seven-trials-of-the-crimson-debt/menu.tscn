@@ -1,16 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://xwoxe5ow6gr6"]
+[gd_scene load_steps=4 format=3 uid="uid://xwoxe5ow6gr6"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_h37bq"]
-[ext_resource type="Texture2D" uid="uid://cgd35uutwdx5k" path="res://Action RPG Resources/World/Untitled design (2)nnhngng.png" id="2_v5w02"]
+[ext_resource type="FontFile" uid="uid://csaw7r2cgvaex" path="res://Minecraft.ttf" id="2_8gocg"]
+[ext_resource type="Texture2D" uid="uid://dp4h6qhleeoyr" path="res://backgroundmenu.png" id="3_cqqry"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 11.0
-offset_top = 29.0
-offset_right = 14.0
+offset_left = 10.0
+offset_top = 84.0
+offset_right = 3.0
 offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -23,25 +24,50 @@ offset_bottom = 40.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+alignment = 1
 
-[node name="Enter the Nexus" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="EnterTheNexus" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.933647, 0.398585, 1, 1)
+theme_override_fonts/font = ExtResource("2_8gocg")
 text = "Enter the Nexus"
 
-[node name="TBBA" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="LayInTheIIBetween" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.537011, 0.537011, 0.537011, 1)
+theme_override_fonts/font = ExtResource("2_8gocg")
 text = "Tavern Brawl Battle Arena Mini Game"
 
-[node name="Submit to Divine Will" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="SubmitToDivineWill" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.12549, 1)
+theme_override_fonts/font = ExtResource("2_8gocg")
 text = "Submit to Divine Will"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.309
+anchor_top = 0.878
+anchor_right = 0.309
+anchor_bottom = 0.878
+offset_left = -14.717
+offset_top = -88.68
+offset_right = 167.283
+offset_bottom = -34.68
+theme_override_colors/default_color = Color(0, 0.518771, 0.936228, 1)
+theme_override_fonts/normal_font = ExtResource("2_8gocg")
+text = "The Crimson Debt"
+fit_content = true
+tab_size = 6
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(148.874, 61.5488)
-scale = Vector2(0.342206, 0.218218)
-texture = ExtResource("2_v5w02")
+position = Vector2(149, 6)
+scale = Vector2(0.498438, 0.279687)
+texture = ExtResource("3_cqqry")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Enter the Nexus" to="." method="_on_enter_the_nexus_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/TBBA" to="." method="_on_lay_in_the_in_between_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Submit to Divine Will" to="." method="_on_submit_to_divine_will_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/EnterTheNexus" to="." method="_on_enter_the_nexus_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/LayInTheIIBetween" to="." method="_on_lay_in_the_in_between_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/SubmitToDivineWill" to="." method="_on_submit_to_divine_will_pressed"]

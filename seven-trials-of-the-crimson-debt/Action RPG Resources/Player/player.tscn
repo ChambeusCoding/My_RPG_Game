@@ -5,9 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://cdtay5x3gdch3" path="res://Hit/hitbox.tscn" id="3_0xhep"]
 [ext_resource type="Script" path="res://Action RPG Resources/Player/swordhitbox.gd" id="4_6vibn"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dr0ol"]
-size = Vector2(13, 23)
-
 [sub_resource type="Animation" id="Animation_mjevc"]
 resource_name = "IdleBack"
 step = 0.1
@@ -1110,8 +1107,13 @@ size = Vector2(42, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spod2"]
 size = Vector2(41, 27)
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dr0ol"]
+size = Vector2(13, 23)
+
+[node name="Player" type="CharacterBody2D" groups=["player", "signs"]]
 position = Vector2(51, 32)
+platform_floor_layers = 4294967041
+platform_wall_layers = 1
 script = ExtResource("1_vn5qs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -1119,10 +1121,6 @@ position = Vector2(0, -9)
 texture = ExtResource("2_n5wer")
 hframes = 60
 frame = 19
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -8)
-shape = SubResource("RectangleShape2D_dr0ol")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1161,5 +1159,9 @@ shape = SubResource("RectangleShape2D_splkx")
 position = Vector2(-2.5, 7.5)
 shape = SubResource("RectangleShape2D_spod2")
 disabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -8)
+shape = SubResource("RectangleShape2D_dr0ol")
 
 [editable path="Hitbox"]

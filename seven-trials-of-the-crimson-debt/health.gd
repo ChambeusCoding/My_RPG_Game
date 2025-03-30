@@ -10,4 +10,4 @@
 	#max_value_amount = parent.health_min
 	#
 #func process(delta):
-	
+	#

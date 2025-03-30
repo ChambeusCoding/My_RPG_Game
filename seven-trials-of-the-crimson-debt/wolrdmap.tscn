@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://r5t6oolp0f41"]
+
+[ext_resource type="Texture2D" uid="uid://cvk5axl1samxs" path="res://maap.png" id="2_ffapp"]
+[ext_resource type="Script" path="res://texture_rect.gd" id="2_fqxhc"]
+
+[node name="Control" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.607
+anchor_top = 0.68
+anchor_right = 1.88
+anchor_bottom = 1.09
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.40211, 0.560628)
+texture = ExtResource("2_ffapp")
+script = ExtResource("2_fqxhc")

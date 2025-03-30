@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://w3x3bqc0k3pw"]
+
+[ext_resource type="Texture2D" uid="uid://bn6dhag0hnwx8" path="res://Water for game-Sheet.png" id="1_388eq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xe7c"]
+atlas = ExtResource("1_388eq")
+region = Rect2(0, 0, 19, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l786f"]
+atlas = ExtResource("1_388eq")
+region = Rect2(19, 0, 19, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahdi3"]
+atlas = ExtResource("1_388eq")
+region = Rect2(38, 0, 19, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hyuj"]
+atlas = ExtResource("1_388eq")
+region = Rect2(57, 0, 19, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inr7d"]
+atlas = ExtResource("1_388eq")
+region = Rect2(76, 0, 19, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vnxk7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xe7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l786f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahdi3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hyuj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inr7d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l88o1"]
+size = Vector2(18, 16)
+
+[node name="nofoam" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vnxk7")
+autoplay = "default"
+frame_progress = 0.688337
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l88o1")

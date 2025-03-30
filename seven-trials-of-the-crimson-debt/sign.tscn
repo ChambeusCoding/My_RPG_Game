@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://r32pes1b2x0h"]
+
+[ext_resource type="Script" path="res://sign.gd" id="1_52a4n"]
+[ext_resource type="Texture2D" uid="uid://bx6nhknmsrd1y" path="res://sign.png" id="2_7b71k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qy1mu"]
+size = Vector2(38, 47)
+
+[node name="sign" type="Node2D" groups=["player", "signs"]]
+script = ExtResource("1_52a4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.564285, 1.20391)
+scale = Vector2(0.945537, 1.27549)
+texture = ExtResource("2_7b71k")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_qy1mu")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -19.0
+offset_top = -23.0
+offset_right = 20.0
+offset_bottom = 23.0
+text = "E"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
