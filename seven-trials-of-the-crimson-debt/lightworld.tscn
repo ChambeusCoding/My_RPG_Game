@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://pdewdf8em006"]
+
+[ext_resource type="PackedScene" uid="uid://b4fxq1qvjj5nf" path="res://world.tscn" id="1_u4feh"]
+
+[node name="lightworld" type="Node2D"]
+
+[node name="MiniGame" parent="." instance=ExtResource("1_u4feh")]

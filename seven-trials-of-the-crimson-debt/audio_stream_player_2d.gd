@@ -1,6 +1,6 @@
 extends Node
 
-var music: AudioStreamPlayer
+var music: AudioStreamPlayer2D
 
 @export var default_music: AudioStream  # Default track when the game starts
 @export var option1_music: AudioStream  # Music for Option 1
@@ -8,12 +8,12 @@ var music: AudioStreamPlayer
 
 func _ready():
 	if not music:
-		music = AudioStreamPlayer.new()
+		music = AudioStreamPlayer2D.new()
 		add_child(music)
 	
 	# Set default music
 	if default_music:
-		music.stream = default_music
+		music.stream = load("res://PANA.ogg")
 	else:
 		music.stream = load("res://TestM.ogg")  # Fallback track
 

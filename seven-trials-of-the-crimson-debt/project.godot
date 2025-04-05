@@ -16,7 +16,7 @@ config/features=PackedStringArray("4.3", "GL Compatibility")
 
 [autoload]
 
-MusicPlayer="*res://MusicPlayer.gd"
+AudioStreamPlayer2="*res://audiomanager.tscn"
 
 [display]
 
