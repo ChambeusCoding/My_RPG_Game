@@ -9,7 +9,7 @@ extends Control
 @onready var submit_will_button: Button = $MarginContainer/VBoxContainer/SubmitToDivineWill
 
 @export var nexus_music: AudioStream  # Music for the Nexus world
-@export var nexus_scene: String  # Path to the Nexus world scene (e.g., "res://scenes/world.tscn")
+@export var nexus_scene: String = "res://world.tscn"  # Path to the Nexus world scene (e.g., "res://scenes/world.tscn")
 
 # Called when the scene is ready
 func _ready():
@@ -23,26 +23,19 @@ func _ready():
 	if not submit_will_button:
 		push_error("SubmitToDivineWill button not found! Check scene tree paths.")
 		return
+		
+func _on_enter_the_nexus_pressed() -> void:
+	if audio_manager and nexus_music:
+		audio_manager.stream = nexus_music
+		audio_manager.play()
 
-	# Connect menu button signals
-	enter_nexus_button.connect("pressed", self, "_on_enter_nexus_pressed")
-	lay_in_between_button.connect("pressed", self, "_on_lay_in_between_pressed")
-	submit_will_button.connect("pressed", self, "_on_submit_will_pressed")
-
-# Button press handlers
-func _on_enter_nexus_pressed():
-	# Switch music to the Nexus track when this button is pressed
-	if audio_manager:
-		audio_manager.switch_music(nexus_music)
-	
-	# Load the Nexus world scene
 	if nexus_scene != "":
-		get_tree().change_scene(nexus_scene)
+		get_tree().change_scene_to_file(nexus_scene)
+		
 
-func _on_lay_in_between_pressed():
-	# This button does nothing as per the request
-	pass
+func _on_lay_in_the_ii_between_pressed() -> void:
+	pass # Replace with function body.
 
-func _on_submit_will_pressed():
-	# Exit the game when this button is pressed
+
+func _on_submit_to_divine_will_pressed() -> void:
 	get_tree().quit()

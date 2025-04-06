@@ -70,7 +70,9 @@ scale = Vector2(0.498438, 0.279687)
 texture = ExtResource("3_cqqry")
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("4_vhlpg")]
+default_music = null
+nexus_music = null
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/EnterTheNexus" to="." method="_on_enter_the_nexus_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/LayInTheIIBetween" to="." method="_on_lay_in_the_in_between_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/LayInTheIIBetween" to="." method="_on_lay_in_the_ii_between_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/SubmitToDivineWill" to="." method="_on_submit_to_divine_will_pressed"]
