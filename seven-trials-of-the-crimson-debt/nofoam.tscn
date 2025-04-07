@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://w3x3bqc0k3pw"]
 
-[ext_resource type="Texture2D" uid="uid://bn6dhag0hnwx8" path="res://Water for game-Sheet.png" id="1_388eq"]
+[ext_resource type="Texture2D" uid="uid://bn6dhag0hnwx8" path="res://Action RPG Resources/World/Water for game-Sheet.png" id="1_388eq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4xe7c"]
 atlas = ExtResource("1_388eq")

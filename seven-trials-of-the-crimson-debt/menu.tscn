@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://xwoxe5ow6gr6"]
+[gd_scene load_steps=4 format=3 uid="uid://xwoxe5ow6gr6"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_h37bq"]
 [ext_resource type="FontFile" uid="uid://csaw7r2cgvaex" path="res://Minecraft.ttf" id="2_8gocg"]
 [ext_resource type="Texture2D" uid="uid://dp4h6qhleeoyr" path="res://backgroundmenu.png" id="3_cqqry"]
-[ext_resource type="PackedScene" uid="uid://bfm2c57mojdg3" path="res://audiomanager.tscn" id="4_vhlpg"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -68,10 +67,6 @@ z_index = -1
 position = Vector2(149, 6)
 scale = Vector2(0.498438, 0.279687)
 texture = ExtResource("3_cqqry")
-
-[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("4_vhlpg")]
-default_music = null
-nexus_music = null
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/EnterTheNexus" to="." method="_on_enter_the_nexus_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/LayInTheIIBetween" to="." method="_on_lay_in_the_ii_between_pressed"]

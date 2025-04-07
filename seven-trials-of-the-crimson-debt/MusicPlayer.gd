@@ -42,22 +42,23 @@ var music: AudioStreamPlayer  # <-- Not 2D
 
 func _ready():
 	if not music:
-		var existing_player = get_node_or_null("MusicPlayer")
+		var existing_player = get_node_or_null("AudioStreamPlayer2D")
 		if existing_player:
 			music = existing_player
 		else:
 			music = AudioStreamPlayer.new()
-			music.name = "MusicPlayer"
+			music.name = "AudioStreamPlayer2D"
 			add_child(music)
 
-	# Only play if not already playing
-	if not music.playing:
-		music.stream = default_music if default_music else load("res://TestM.ogg")
-		music.play()
+	# Stop anything playing first, just in case
+	music.stop()
+	
+	# Set stream
+	music.stream = default_music if default_music else load("res://audio/TestM8bit.ogg")
+	music.play()
 
 func switch_music(new_track: AudioStream):
 	if new_track and new_track != music.stream:
-		print("Switching music to:", new_track.resource_path)
 		music.stop()
 		music.stream = new_track
 		music.play()
